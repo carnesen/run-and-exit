@@ -1,7 +1,7 @@
 {
   "name": "@carnesen/run-and-exit",
-  "description": "Runs an async function, console.log's the resolved/rejected value, and process.exit's",
-  "version": "0.0.0-0",
+  "description": "Run an async function, console.log the result, and exit",
+  "version": "0.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "engines": {
