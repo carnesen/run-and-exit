@@ -1,6 +1,6 @@
-# @carnesen/run-and-exit
+# @carnesen/run-and-exit [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
 
-> Runs an async function, console.log's the resolved/rejected value, and process.exit's
+Runs an async function, console.log's the resolved/rejected value, and process.exit's
 
 ## Install
 
@@ -51,7 +51,7 @@ $ echo $?
 
 ### runAndExit(asyncFunc, ...args)
 
-#### version
+#### asyncFunc
 
 Type: `function`
 
@@ -61,7 +61,7 @@ A function that returns a promise.
 
 Type: `any`
 
-Arguments passed in when asyncFunc is invoked
+Arguments passed to asyncFunc
 
 ## License
 
