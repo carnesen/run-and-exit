@@ -13,4 +13,8 @@ async function runAndExit<T extends any[]>(asyncFunc: AsyncFunc<T>, ...args: T) 
   }
 }
 
+namespace runAndExit {
+
+}
+
 export = runAndExit;
