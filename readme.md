@@ -12,7 +12,7 @@ $ npm install --save @carnesen/run-and-exit
 
 ```ts
 // example.ts
-import { runAndExit } from '@carnesen/run-and-exit';
+import runAndExit = require('@carnesen/run-and-exit');
 
 const asyncFunc = async (a: string, b: string) => `${a}-${b}`;
 
@@ -30,7 +30,7 @@ $ echo $?
 
 ```js
 // example.js
-const { runAndExit } = require('@carnesen/run-and-exit');
+const runAndExit = require('@carnesen/run-and-exit');
 
 runAndExit(async () => {
   throw new Error('Oops');
