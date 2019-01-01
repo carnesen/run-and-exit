@@ -13,4 +13,4 @@ async function runAndExit<T extends any[]>(asyncFunc: AsyncFunc<T>, ...args: T) 
   }
 }
 
-export = runAndExit;
+export { runAndExit };

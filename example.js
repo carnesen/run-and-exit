@@ -1,4 +1,4 @@
-const runAndExit = require('.');
+const { runAndExit } = require('.');
 
 runAndExit(async () => {
   return 'Success!';
