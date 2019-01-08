@@ -1,6 +1,6 @@
 # @carnesen/run-and-exit [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
 
-Runs an async function, console.log's the resolved/rejected value, and process.exit's
+Run an async function, `console.log` the resolved/rejected value, and process.exit
 
 ## Install
 
