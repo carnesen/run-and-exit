@@ -73,6 +73,9 @@ A function. Can return/throw a value synchronously or return a `Promise` (e.g. a
 
 Arguments passed to `fn`. If using TypeScript, `args` must be assignable to the parameter types of `fn` just as if you were calling `fn(args)` directly.
 
+## More information
+This micro-package has a half dozen unit tests with 100% coverage. If you want to see more examples of how it works, [those tests](src/__tests__) would be a good place to start. If you encounter any bugs or have any questions or feature requests, please don't hesitate to file an issue or submit a pull request on this project's repository on GitHub.
+
 ## Related
 - [@carnesen/cli](https://github.com/carnesen/cli): A library for building Node.js command-line interfaces
 - [@carnesen/coded-error](https://github.com/carnesen/coded-error): An enhanced `Error` class with additional properties "code" and "data"
