@@ -1,6 +1,6 @@
 # @carnesen/run-and-exit [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
 
-Runs an async function, console.log's the resolved/rejected value, and process.exit's
+Run an async function, `console.log` the resolved/rejected value, and `process.exit`
 
 ## Install
 
@@ -62,6 +62,10 @@ A function that returns a promise.
 Type: `any`
 
 Arguments passed to asyncFunc
+
+## Related
+- [@carnesen/cli](https://github.com/carnesen/cli): A library for building Node.js command-line interfaces
+- [@carnesen/coded-error](https://github.com/carnesen/coded-error): An enhanced `Error` class with additional properties "code" and "data"
 
 ## License
 
