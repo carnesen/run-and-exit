@@ -1,8 +1,6 @@
-type AsyncFunc<T extends any[]> = (...args: T) => Promise<any>;
-
-async function runAndExit<T extends any[]>(asyncFunc: AsyncFunc<T>, ...args: T) {
+async function runAndExit<T extends any[]>(fn: (...args: T) => any, ...args: T) {
   try {
-    const value = await asyncFunc(...args);
+    const value = await fn(...args);
     if (typeof value !== 'undefined') {
       console.log(value);
     }
@@ -13,4 +11,4 @@ async function runAndExit<T extends any[]>(asyncFunc: AsyncFunc<T>, ...args: T) 
   }
 }
 
-export { runAndExit };
+export = runAndExit;

@@ -1,4 +1,6 @@
-import { runAndExit } from '.';
-const asyncFunc = async (a: string, b: string) => `${a}-${b}`;
+import runAndExit = require('.');
 
-runAndExit(asyncFunc, 'foo', 'bar');
+const concat = (a: string, b: string) => `${a}${b}`;
+
+// runAndExit(concat, 'foo', 3);
+runAndExit(concat, 'foo', 'bar');

@@ -1,22 +1,48 @@
 # @carnesen/run-and-exit [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
 
-Run an async function, `console.log` the resolved/rejected value, and `process.exit`
+Run a function, `console.log` the returned/resolved/thrown/rejected value, and `process.exit`
 
 ## Install
 
 ```
-$ npm install --save @carnesen/run-and-exit
+$ npm install @carnesen/run-and-exit
+```
+This package includes runtime JavaScript files suitable for Node.js >=8 as well as the corresponding TypeScript type declarations.
+
+## Usage
+Here's a JavaScript example with an `async` function that fails:
+
+```js
+// example.js
+const runAndExit = require('@carnesen/run-and-exit');
+const { readFile } = require('fs');
+const { promisify } = require('util');
+
+runAndExit(async () => {
+  const fileContents = await promisify(readFile)('/foo/bar/baz', 'utf8');
+  return fileContents;
+});
 ```
 
-## TypeScript example
+```
+$ node example.js
+{ Error: ENOENT: no such file or directory, open '/foo/bar/baz'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/foo/bar/baz' }
+$ echo $?
+1
+```
+
+Here's a TypeScript example with a synchronous function that succeeds:
 
 ```ts
 // example.ts
-import { runAndExit } from ('@carnesen/run-and-exit');
+import runAndExit = require('@carnesen/run-and-exit');
 
-const asyncFunc = async (a: string, b: string) => `${a}-${b}`;
-
-runAndExit(asyncFunc, 'foo', 'bar');
+const concat = (a: string, b: string) => `${a}-${b}`;
+runAndExit(concat, 'foo', 'bar');
 ```
 
 ```
@@ -25,47 +51,33 @@ foo-bar
 $ echo $?
 0
 ```
-
-## JavaScript example
-
-```js
-// example.js
-const { runAndExit } = require('@carnesen/run-and-exit');
-
-runAndExit(async () => {
-  throw new Error('Oops');
-});
+`runAndExit` is intelligently typed in the sense that, continuing the previous example, the TypeScript compiler would complain if you tried this:
+```ts
+// NOT OK
+runAndExit(concat, 'foo', 3);
+// ^^ error TS2345: Argument of type '3' is not assignable to parameter of type 'string'.
 ```
-
-```
-$ node example.js
-Error: Oops
-    at runAndExit (/Users/chrisarnesen/GitHub/run-and-exit/lib/example.1.js:4:11)
-    at exports.runAndExit (/Users/chrisarnesen/GitHub/run-and-exit/lib/index.js:5:29)
-    ...
-$ echo $?
-1
-```
+This is achieved using ["rest elements in tuple types"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#rest-elements-in-tuple-types), new in TypeScript 3.0. If you're using an older version of TypeScript, `runAndExit` may not work as advertised here.
 
 ## API
 
-### runAndExit(asyncFunc, ...args)
+### runAndExit(fn, ...args)
 
-#### asyncFunc
+Runs the provided function `fn` with arguments `args`.
 
-Type: `function`
+#### fn
 
-A function that returns a promise.
+A function. Can return/throw a value synchronously or return a `Promise` (e.g. an `async` function). If `fn` throws or returns a promise that rejects, the exception is `console.log`ged and then `process.exit(1)` is called. In particular this means that if you don't want a show a stack trace in the terminal, `fn` should throw a string instead of an `Error` object. If `fn` returns a non-`Promise` value or a `Promise` that resolves, the value is `console.log`ged and then `process.exit(0)` is called.
 
 #### args
 
-Type: `any`
-
-Arguments passed to asyncFunc
+Arguments passed to `fn`. If using TypeScript, `args` must be assignable to the parameter types of `fn` just as if you were calling `fn(args)` directly.
 
 ## Related
 - [@carnesen/cli](https://github.com/carnesen/cli): A library for building Node.js command-line interfaces
 - [@carnesen/coded-error](https://github.com/carnesen/coded-error): An enhanced `Error` class with additional properties "code" and "data"
+- [@carnesen/tslint-config](https://github.com/carnesen/tslint-config): TSLint configurations for `@carnesen` projects
+- [@carnesen/tsconfig](https://github.com/carnesen/tsconfig): TypeScript configurations for `@carnesen` projects
 
 ## License
 

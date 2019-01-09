@@ -21,7 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "@carnesen/tsconfig": "0.0.1",
-    "@carnesen/tslint-config": "0.0.3",
+    "@carnesen/tslint-config": "0.1.0-0",
     "@types/jest": "23.3.10",
     "@types/node": "8.10.38",
     "jest": "23.6.0",
