@@ -1,6 +1,6 @@
 # @carnesen/run-and-exit [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
 
-Run a function, `console.log` the returned/resolved/thrown/rejected value, and `process.exit`
+Run a function, `console.log` the result, and `process.exit`
 
 ## Install
 
@@ -57,7 +57,7 @@ $ echo $?
 runAndExit(concat, 'foo', 3);
 // ^^ error TS2345: Argument of type '3' is not assignable to parameter of type 'string'.
 ```
-This is achieved using ["rest elements in tuple types"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#rest-elements-in-tuple-types), new in TypeScript 3.0. If you're using an older version of TypeScript, `runAndExit` may not work as advertised here.
+This is achieved using ["rest parameters with tuple types"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#rest-parameters-with-tuple-types), new in TypeScript 3.0. If you're using an older version of TypeScript, `runAndExit` may not work as advertised here.
 
 ## API
 
