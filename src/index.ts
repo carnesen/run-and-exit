@@ -1,4 +1,4 @@
-async function runAndExit<T extends any[]>(fn: (...args: T) => any, ...args: T) {
+export async function runAndExit<T extends any[]>(fn: (...args: T) => any, ...args: T) {
   try {
     const value = await fn(...args);
     if (typeof value !== 'undefined') {
@@ -10,5 +10,3 @@ async function runAndExit<T extends any[]>(fn: (...args: T) => any, ...args: T) 
     process.exit(1);
   }
 }
-
-export = runAndExit;

@@ -14,7 +14,7 @@ Here's a JavaScript example with an `async` function that fails:
 
 ```js
 // example.js
-const runAndExit = require('@carnesen/run-and-exit');
+const { runAndExit } = require('@carnesen/run-and-exit');
 const { readFile } = require('fs');
 const { promisify } = require('util');
 
@@ -39,7 +39,7 @@ Here's a TypeScript example with a synchronous function that succeeds:
 
 ```ts
 // example.ts
-import runAndExit = require('@carnesen/run-and-exit');
+import { runAndExit } from '@carnesen/run-and-exit';
 
 const concat = (a: string, b: string) => `${a}-${b}`;
 runAndExit(concat, 'foo', 'bar');
@@ -77,10 +77,10 @@ Arguments passed to `fn`. If using TypeScript, `args` must be assignable to the 
 This micro-package has a half dozen unit tests with 100% coverage. If you want to see more examples of how it works, [those tests](src/__tests__) would be a good place to start. If you encounter any bugs or have any questions or feature requests, please don't hesitate to file an issue or submit a pull request on this project's repository on GitHub.
 
 ## Related
+
 - [@carnesen/cli](https://github.com/carnesen/cli): A library for building Node.js command-line interfaces
+
 - [@carnesen/coded-error](https://github.com/carnesen/coded-error): An enhanced `Error` class with additional properties "code" and "data"
-- [@carnesen/tslint-config](https://github.com/carnesen/tslint-config): TSLint configurations for `@carnesen` projects
-- [@carnesen/tsconfig](https://github.com/carnesen/tsconfig): TypeScript configurations for `@carnesen` projects
 
 ## License
 

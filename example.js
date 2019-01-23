@@ -1,5 +1,5 @@
 // example.js
-const runAndExit = require('.');
+const { runAndExit } = require('.');
 const { readFile } = require('fs');
 const { promisify } = require('util');
 

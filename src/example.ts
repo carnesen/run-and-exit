@@ -1,4 +1,4 @@
-import runAndExit = require('.');
+import { runAndExit } from '.';
 
 const concat = (a: string, b: string) => `${a}${b}`;
 

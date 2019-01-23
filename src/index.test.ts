@@ -1,4 +1,4 @@
-import runAndExit = require('.');
+import { runAndExit } from '.';
 
 const createMocks = (value: any) => {
   const fn = jest.fn().mockReturnValue(value);
