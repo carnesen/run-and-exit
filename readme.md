@@ -80,8 +80,6 @@ This micro-package has a half dozen unit tests with 100% coverage. If you want t
 
 - [@carnesen/cli](https://github.com/carnesen/cli): A library for building Node.js command-line interfaces
 
-- [@carnesen/coded-error](https://github.com/carnesen/coded-error): An enhanced `Error` class with additional properties "code" and "data"
-
 ## License
 
 MIT © [Chris Arnesen](https://www.carnesen.com)
