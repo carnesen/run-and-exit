@@ -1,6 +1,6 @@
 {
   "name": "@carnesen/run-and-exit",
-  "description": "Run an async function, console.log the result, and exit",
+  "description": "Run a function, console.log the result, and exit",
   "version": "0.2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
