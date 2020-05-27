@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ '14', '12', '10', '8' ]
+        node-version: [ '14', '12', '10' ]
     name: Node.js ${{ matrix.node-version }}
     steps:
     - name: Checkout source
