@@ -16,7 +16,7 @@ const createMocks = (value: any, done: () => void) => {
 };
 
 describe(runAndExit.name, () => {
-  it('calls the provided function with the provided args, if any', done => {
+  it('calls the provided function with the provided args, if any', (done) => {
     const arg0 = {};
     const arg1 = {};
     const mocks = createMocks(Promise.resolve(), () => {
@@ -27,7 +27,7 @@ describe(runAndExit.name, () => {
     runAndExit(mocks.fn, arg0, arg1);
   });
 
-  it('calls process.exit(1) and console.log(err) on error', done => {
+  it('calls process.exit(1) and console.log(err) on error', (done) => {
     const err = new Error();
     const mocks = createMocks(Promise.reject(err), () => {
       expect(mocks.log).toHaveBeenCalledWith(err);
@@ -38,7 +38,7 @@ describe(runAndExit.name, () => {
     runAndExit(mocks.fn);
   });
 
-  it('calls process.exit(0) on success', done => {
+  it('calls process.exit(0) on success', (done) => {
     const mocks = createMocks(Promise.resolve(), () => {
       expect(mocks.exit).toHaveBeenCalledWith(0);
       mocks.restoreAll();
@@ -47,7 +47,7 @@ describe(runAndExit.name, () => {
     runAndExit(mocks.fn);
   });
 
-  it('calls console.log(value) if resolved value is defined', done => {
+  it('calls console.log(value) if resolved value is defined', (done) => {
     const value = 'Success!';
     const mocks = createMocks(Promise.resolve(value), () => {
       expect(mocks.log).toHaveBeenCalledWith(value);
@@ -57,7 +57,7 @@ describe(runAndExit.name, () => {
     runAndExit(mocks.fn);
   });
 
-  it('does not call console.log if resolved value is not defined', done => {
+  it('does not call console.log if resolved value is not defined', (done) => {
     const mocks = createMocks(Promise.resolve(), () => {
       expect(mocks.log).toHaveBeenCalledTimes(0);
       mocks.restoreAll();
@@ -66,7 +66,7 @@ describe(runAndExit.name, () => {
     runAndExit(mocks.fn);
   });
 
-  it('works with synchronous function too', done => {
+  it('works with synchronous function too', (done) => {
     const mocks = createMocks('foo', () => {
       expect(mocks.log).toHaveBeenCalledWith('foo');
       mocks.restoreAll();
