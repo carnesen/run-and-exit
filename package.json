@@ -8,28 +8,26 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "build": "rimraf lib && tsc",
+    "build": "rimraf lib/ && tsc",
     "example": "node example.js && ts-node src/example.ts",
-    "lint": "tslint --project .",
-    "lint:fix": "npm run lint -- --fix",
-    "test": "npm run lint && npm run test:unit && npm run build && npm run example",
-    "test:unit": "jest --coverage src",
-    "test:watch": "npm run test:unit -- --watch",
-    "preversion": "npm test",
-    "postversion": "npm publish"
+    "lint": "eslint --ext .ts src/",
+    "fix": "npm run lint -- --fix",
+    "test": "npm run lint && npm run unit-test && npm run build && npm run example",
+    "unit-test": "jest --coverage src",
+    "prepublishOnly": "npm test"
   },
   "dependencies": {},
   "devDependencies": {
-    "@carnesen/tsconfig": "0.1.0",
-    "@carnesen/tslint-config": "0.1.2",
-    "@types/jest": "24.0.25",
-    "@types/node": "13.1.1",
-    "jest": "24.9.0",
-    "rimraf": "3.0.0",
-    "ts-jest": "24.2.0",
-    "ts-node": "8.5.4",
-    "tslint": "5.20.1",
-    "typescript": "3.7.4"
+    "@carnesen/tsconfig": "0.2.0",
+    "@types/jest": "25.2.3",
+    "@types/node": "14.0.5",
+    "eslint": "7.1.0",
+    "eslint-config-carnesen": "2.0.0",
+    "jest": "26.0.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.0.0",
+    "ts-node": "8.10.1",
+    "typescript": "3.9.3"
   },
   "files": [
     "src/index.ts",
