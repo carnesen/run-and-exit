@@ -1,47 +1,46 @@
 {
-  "name": "@carnesen/run-and-exit",
-  "description": "Run a function, console.log the result, and exit",
-  "version": "0.3.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "scripts": {
-    "build": "rimraf lib/ && tsc",
-    "example": "node example.js && ts-node src/example.ts",
-    "lint": "eslint --ext .ts src/",
-    "fix": "npm run lint -- --fix",
-    "test": "npm run lint && npm run unit-test && npm run build && npm run example",
-    "unit-test": "jest --coverage src",
-    "prepublishOnly": "npm test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@carnesen/tsconfig": "0.3.1",
-    "@types/jest": "25.2.3",
-    "@types/node": "14.0.12",
-    "eslint": "7.2.0",
-    "eslint-config-carnesen": "4.0.0",
-    "jest": "26.0.1",
-    "rimraf": "3.0.2",
-    "ts-jest": "26.1.0",
-    "ts-node": "8.10.2",
-    "typescript": "3.9.5"
-  },
-  "files": [
-    "src/index.ts",
-    "lib/index.js*",
-    "lib/index.d.ts*"
-  ],
-  "author": {
-    "name": "Chris Arnesen",
-    "email": "chris.arnesen@gmail.com"
-  },
-  "repository": "git://github.com/carnesen/run-and-exit.git",
-  "bugs": {
-    "url": "https://github.com/carnesen/run-and-exit/issues"
-  },
-  "homepage": "https://github.com/carnesen/run-and-exit",
-  "license": "MIT"
+	"name": "@carnesen/run-and-exit",
+	"description": "Run a function or async function, console.log the result, and exit",
+	"version": "0.3.1",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"scripts": {
+		"build": "rimraf lib/ && tsc",
+		"example": "node example.js && ts-node src/example.ts",
+		"lint": "eslint --ext .js,.ts src/ example.js",
+		"fix": "npm run lint -- --fix",
+		"test": "npm run build && npm run lint && npm run unit-test && npm run example && npm pack",
+		"unit-test": "jest --coverage src",
+		"prepublishOnly": "npm test"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@carnesen/tsconfig": "0.4.0",
+		"@types/jest": "26.0.9",
+		"@types/node": "14.0.27",
+		"eslint": "7.6.0",
+		"eslint-config-carnesen": "4.4.0",
+		"jest": "26.2.2",
+		"rimraf": "3.0.2",
+		"ts-jest": "26.1.4",
+		"ts-node": "8.10.2",
+		"typescript": "3.9.7"
+	},
+	"files": [
+		"src/index.ts",
+		"lib/index.*"
+	],
+	"author": {
+		"name": "Chris Arnesen",
+		"email": "chris.arnesen@gmail.com"
+	},
+	"repository": "git://github.com/carnesen/run-and-exit.git",
+	"bugs": {
+		"url": "https://github.com/carnesen/run-and-exit/issues"
+	},
+	"homepage": "https://github.com/carnesen/run-and-exit",
+	"license": "MIT"
 }

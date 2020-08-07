@@ -1,5 +1,9 @@
 ### Node ###
 
+# npm package tarball
+*.tgz
+
+# Code coverage
 /coverage
 
 # Logs
