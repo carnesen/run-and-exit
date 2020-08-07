@@ -1,6 +1,12 @@
-export function runAndExit<T extends any[]>(
-	fn: (...args: T) => any,
-	...args: T
+/**
+ * Run a function or async function, console.log the result, and process.exit
+ * @param fn A function or async function
+ * @param args Arguments to pass to the function. Must be suitably typed.
+ * @typeParam TArgs Type of the arguments
+ */
+export function runAndExit<TArgs extends any[]>(
+	fn: (...args: TArgs) => any,
+	...args: TArgs
 ): void {
 	(async () => {
 		try {
