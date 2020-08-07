@@ -1,10 +1,10 @@
 {
-  "extends": "@carnesen/tsconfig",
-  "include": [
-    "src",
-  ],
-  "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./lib",
-  },
+	"extends": "@carnesen/tsconfig/tsconfig.json",
+	"include": [
+		"src",
+	],
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./lib",
+	},
 }

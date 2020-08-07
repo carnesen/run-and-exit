@@ -1,15 +1,15 @@
-# @carnesen/run-and-exit
+# **@carnesen/run-and-exit**
 
-Run a function, `console.log` the result, and `process.exit`
+Run a function or async function, `console.log` the result, and `process.exit`
 
-[![npm version badge](https://badge.fury.io/js/%40carnesen%2Fcli.svg)](https://www.npmjs.com/package/@carnesen/cli) [![Build Status](https://travis-ci.com/carnesen/run-and-exit.svg?branch=master)](https://travis-ci.com/carnesen/run-and-exit)
+[![build status badge](https://github.com/carnesen/run-and-exit/workflows/test/badge.svg)](https://github.com/carnesen/run-and-exit/actions?query=workflow%3Atest+branch%3Amaster) [![npm version badge](https://badge.fury.io/js/%40carnesen%2Frun-and-exit.svg)](https://www.npmjs.com/package/@carnesen/run-and-exit) [![github stars badge](https://img.shields.io/github/stars/carnesen/run-and-exit)](https://github.com/carnesen/run-and-exit)
 
 ## Install
 
 ```
 $ npm install @carnesen/run-and-exit
 ```
-This package includes runtime JavaScript files suitable for Node.js >=8 as well as the corresponding TypeScript type declarations.
+This package includes runtime JavaScript files (ES2015 + CommonJS) as well as the corresponding TypeScript type declarations.
 
 ## Usage
 Here's a JavaScript example with an `async` function that fails:
@@ -76,7 +76,7 @@ A function. Can return/throw a value synchronously or return a `Promise` (e.g. a
 Arguments passed to `fn`. If using TypeScript, `args` must be assignable to the parameter types of `fn` just as if you were calling `fn(args)` directly.
 
 ## More information
-This micro-package has a half dozen unit tests with 100% coverage. If you want to see more examples of how it works, [those tests](src/__tests__) would be a good place to start. If you encounter any bugs or have any questions or feature requests, please don't hesitate to file an issue or submit a pull request on this project's repository on GitHub.
+This micro-package has a half dozen unit tests with 100% coverage. If you want to see more examples of how it works, [those tests](src/__tests__) would be a good place to start. If you encounter any bugs or have any questions or feature requests, please don't hesitate to file an issue or submit a pull request on [this project's repository on GitHub](https://github.com/carnesen/run-and-catch/).
 
 ## Related
 
