@@ -19,15 +19,15 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@carnesen/tsconfig": "0.4.0",
-		"@types/jest": "26.0.9",
-		"@types/node": "14.0.27",
-		"eslint": "7.6.0",
-		"eslint-config-carnesen": "4.4.0",
-		"jest": "26.2.2",
+		"@types/jest": "26.0.23",
+		"@types/node": "15.6.1",
+		"eslint": "7.27.0",
+		"eslint-config-carnesen": "5.0.0",
+		"jest": "27.0.2",
 		"rimraf": "3.0.2",
-		"ts-jest": "26.1.4",
-		"ts-node": "8.10.2",
-		"typescript": "3.9.7"
+		"ts-jest": "27.0.1",
+		"ts-node": "10.0.0",
+		"typescript": "4.3.2"
 	},
 	"files": [
 		"src/index.ts",
